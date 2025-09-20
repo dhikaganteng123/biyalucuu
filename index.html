@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>For You — Mini Surprise</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="card" role="main" aria-labelledby="title">
+      <h1 id="title">Website Dadakan HAHAHA 😭</h1>
+
+      <div class="stage" id="stage" aria-live="polite">
+        <div class="msg" id="msg">
+          <div class="typewriter" id="type"></div>
+          <span class="cursor" id="cursor"></span>
+        </div>
+
+        <!-- Tombol pertama -->
+        <button id="btn-first" class="btn primary">Klik aku sekarang!</button>
+
+        <!-- Tombol kecil tersembunyi di kanan atas -->
+        <button
+          id="btn-hidden"
+          title="Tombol rahasia"
+          aria-label="Tombol rahasia"
+          class="btn hidden-btn"
+          style="display: none"
+        >
+          🔍
+        </button>
+
+        <!-- Menu utama Megalodon/Kraken (sembunyi dulu) -->
+        <div id="menu-main" class="controls" style="display: none">
+          <button class="btn" id="btn-mega">Megalodon</button>
+          <button class="btn" id="btn-kraken">Kraken</button>
+          <button class="btn primary" id="btn-rand">Acak</button>
+        </div>
+
+        <!-- Pilihan Iya / Tidak -->
+        <div
+          id="choice-container"
+          style="display: none; gap: 10px; margin-top: 15px"
+        >
+          <button id="btn-yes" class="btn">Iya</button>
+          <button id="btn-no" class="btn">ngga ah</button>
+        </div>
+
+        <!-- Konfirmasi Yakin -->
+        <div id="confirm-container" style="display: none; margin-top: 15px">
+          <button id="btn-sure" class="btn">Yakin</button>
+        </div>
+
+        <!-- Pilihan terakhir setelah maksa -->
+        <div id="final-container" style="display: none; margin-top: 15px">
+          <button id="btn-final" class="btn primary">Yaudah deh Dhikaa</button>
+        </div>
+        <!-- Pilihan oke Dhika -->
+        <div id="ok-container" style="display: none; margin-top: 15px">
+          <button id="btn-ok" class="btn primary">Oke Dhika</button>
+        </div>
+
+        <!-- Wave for Megalodon -->
+        <div id="wave" class="wave" style="display: none"></div>
+
+        <!-- Megalodon SVG -->
+        <svg
+          id="megalodon"
+          class="creature"
+          viewBox="0 0 600 300"
+          xmlns="http://www.w3.org/2000/svg"
+          style="display: none"
+        >
+          <defs>
+            <linearGradient id="g1" x1="0" x2="1">
+              <stop offset="0" stop-color="#9be7ff" />
+              <stop offset="1" stop-color="#3aa0ff" />
+            </linearGradient>
+          </defs>
+          <g transform="translate(30,30)">
+            <path
+              d="M20 120 C60 100, 160 80, 260 80 C360 80, 440 70, 520 40 C480 90, 420 150, 340 170 C260 190, 160 170, 80 160 C60 158, 40 150, 20 120 Z"
+              fill="url(#g1)"
+            />
+            <circle cx="200" cy="90" r="6" fill="#041730" />
+            <polygon
+              points="90,130 140,110 120,150"
+              fill="#041730"
+              opacity="0.9"
+            />
+            <g fill="#fff">
+              <polygon points="360,140 350,155 370,155" />
+              <polygon points="380,140 370,155 390,155" />
+              <polygon points="400,140 390,155 410,155" />
+              <polygon points="420,140 410,155 430,155" />
+            </g>
+          </g>
+        </svg>
+
+        <!-- Kraken SVG -->
+        <svg
+          id="kraken"
+          class="creature"
+          viewBox="0 0 500 300"
+          xmlns="http://www.w3.org/2000/svg"
+          style="display: none"
+        >
+          <defs>
+            <linearGradient id="k1" x1="0" x2="1">
+              <stop offset="0" stop-color="#fbc2eb" />
+              <stop offset="1" stop-color="#a6c1ee" />
+            </linearGradient>
+          </defs>
+          <g transform="translate(10,10)">
+            <ellipse cx="220" cy="80" rx="120" ry="70" fill="url(#k1)" />
+            <circle cx="180" cy="70" r="8" fill="#031226" />
+            <circle cx="250" cy="75" r="6" fill="#031226" />
+            <path
+              class="tentacle"
+              d="M40 210 C100 180, 120 140, 200 140"
+              stroke="#a64e9a"
+              stroke-width="18"
+              stroke-linecap="round"
+              fill="none"
+            />
+            <path
+              class="tentacle"
+              d="M460 220 C400 190, 380 160, 300 150"
+              stroke="#8b2e7d"
+              stroke-width="16"
+              stroke-linecap="round"
+              fill="none"
+            />
+            <path
+              class="tentacle"
+              d="M260 240 C240 200, 220 170, 160 160"
+              stroke="#b24a8f"
+              stroke-width="12"
+              stroke-linecap="round"
+              fill="none"
+            />
+          </g>
+        </svg>
+
+        <!-- Container balon love -->
+        <div id="balloons-container"></div>
+      </div>
+    </div>
+
+    <!-- Suara -->
+
+    <audio id="click-sound" src="click.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
